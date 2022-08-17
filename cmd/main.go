@@ -25,8 +25,8 @@ import (
 // Using a separate entry-point can reduce the size of the binary file
 func main() {
 	cmd := ctl.NewDefaultKubeKeyCommand()
-	_ = exec.Command("/bin/bash", "-c", "ulimit -u 65535").Run()
-	_ = exec.Command("/bin/bash", "-c", "ulimit -n 65535").Run()
+	_ = exec.Command("/bin/sh", "-c", "ulimit -u 65535").Run()
+	_ = exec.Command("/bin/sh", "-c", "ulimit -n 65535").Run()
 
 	// Execute adds all child commands to the root command and sets flags appropriately.
 	// This is called by main.main(). It only needs to happen once to the rootCmd.
