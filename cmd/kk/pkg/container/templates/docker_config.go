@@ -40,7 +40,8 @@ var DockerConfig = template.Must(template.New("daemon.json").Parse(
   {{- if .InsecureRegistries }}
   "insecure-registries": [{{ .InsecureRegistries }}],
   {{- end}}
-  "exec-opts": ["native.cgroupdriver=systemd"]
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "live-restore": true
 }
     `)))
 
