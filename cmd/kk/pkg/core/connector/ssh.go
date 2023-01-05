@@ -601,5 +601,5 @@ func (c *connection) Chmod(path string, mode os.FileMode) error {
 }
 
 func SudoPrefix(cmd string) string {
-	return fmt.Sprintf("sudo -E /bin/bash -c \"%s\"", cmd)
+	return fmt.Sprintf("sudo -E /bin/sh -c \"umask 002; %s\"", cmd)
 }
